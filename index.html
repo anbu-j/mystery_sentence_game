@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Sentence Game</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="leftTree">
+        <H1>PLAYER CONSOLE</H1>
+        <div class="playStation">
+
+            <input class="players" type="text" value="Player 1" readonly="true"/>
+             <input class="players" type="text" value="Player 2" readonly="true"/>
+             <input class="gameMessage" type="text" value="Game is yet to start." readonly="true"/>
+         </div>
+         <div class="playButton">
+            <button class="glow-on-hover" type="button">Start Game</button>
+            <button class="glow-on-hover" type="button">Restart Game</button>
+           <!----<input class="btnStart" type="button" value="Start Game"> 
+            <input class="btnStart" type="button" value="Restart Game"> -->
+         </div>
+         
+
+    </div>
+    <div class="Container"> <H1>GAME CONSOLE </H1>
+        <div id="display-board" class="display-board">
+            <!--<p>Hello World!</p>
+            <textarea cols="50" rows="1">
+
+            </textarea>-->
+       
+            
+        </div>
+        <div class="Keyboard">
+            <input type="text" class="alpha" value="Q" readonly="true"/>
+            <input class="alpha" type="text" value="W" readonly="true"/>
+            <input class="alpha" type="text" value="E" readonly="true"/>
+            <input class="alpha" type="text" value="R" readonly="true"/>
+            <input class="alpha" type="text" value="T" readonly="true"/>
+            <input class="alpha" type="text" value="Y" readonly="true"/>
+            <input class="alpha" type="text" value="U" readonly="true"/>
+            <input class="alpha" type="text" value="I" readonly="true"/>
+            <input class="alpha" type="text" value="O" readonly="true"/>
+            <input class="alpha" type="text" value="P" readonly="true" /></br>
+            <input class="alpha" type="text" value="A" readonly="true"/>
+            <input class="alpha" type="text" value="S" readonly="true"/>
+            <input class="alpha" type="text" value="D" readonly="true"/>
+            <input class="alpha" type="text" value="F" readonly="true"/>
+            <input class="alpha" type="text" value="G" readonly="true"/>
+            <input class="alpha" type="text" value="H" readonly="true"/>
+            <input class="alpha" type="text" value="J" readonly="true"/>
+            <input class="alpha" type="text" value="K" readonly="true"/>
+            <input class="alpha" type="text" value="L" readonly="true"/></br>
+            <input class="alpha" type="text" value="Z" readonly="true"/>
+            <input class="alpha" type="text" value="X" readonly="true"/>
+            <input class="alpha" type="text" value="C" readonly="true"/>
+            <input class="alpha" type="text" value="V" readonly="true"/>
+            <input class="alpha" type="text" value="B" readonly="true"/>
+            <input class="alpha" type="text" value="N" readonly="true"/>
+            <input class="alpha" type="text" value="M" readonly="true"/>
+        </div>
+        <button class="glow-on-hover" type="button">Predict the Sentence</button>
+        <!--<input class="btnFinish" type="button" value="Predict the Sentence!"> -->
+    </div>
+    <div class="scoreBoard"> 
+        <H1>SCOREBOARD</H1>
+
+        <div class="rightTree">
+            <div class="score">
+                <div class="player1"> <h2>Player 1</h2>
+                    <p>Score : </p>
+                    <p>Turns left: </p>
+    
+                </div>
+                <div class="player2"> <h2>Player 2</h2>
+                    <p>Score : </p>
+                    <p>Turns left: </p>
+                </div>
+            </div>
+            
+            
+            <div class="leaderBoard"> <h3>Rounds</h3>
+                <p>player1 :</p>
+                <p>player2 : </p>
+            </div>  
+        </div>  
+        </div>
+          
+    
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
