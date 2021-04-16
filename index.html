@@ -13,13 +13,14 @@
         <H1>PLAYER CONSOLE</H1>
         <div class="playStation">
 
-            <input class="players" type="text" value="Player 1" readonly="true"/>
-             <input class="players" type="text" value="Player 2" readonly="true"/>
-             <input class="gameMessage" type="text" value="Game is yet to start." readonly="true"/>
+            <input id="p1" class="players" type="text" value="Player 1" readonly="true"/>
+             <input id="p2" class="players" type="text" value="Player 2" readonly="true"/>
+             <input id="p3" class="gameMessage" type="text" value="Game is yet to start." readonly="true"/>
          </div>
          <div class="playButton">
-            <button class="glow-on-hover" type="button">Start Game</button>
-            <button class="glow-on-hover" type="button">Restart Game</button>
+            <button id="sg" class="glow-on-hover" type="button" onclick="startGame()">Start Game</button>
+            <button id="rg" class="glow-on-hover" type="button" onclick="reGame()">Restart</button>
+            <button id ="pg" class="glow-on-hover" type="button" onclick="pauseGame()">Quit</button>
            <!----<input class="btnStart" type="button" value="Start Game"> 
             <input class="btnStart" type="button" value="Restart Game"> -->
          </div>
@@ -36,32 +37,32 @@
             
         </div>
         <div class="Keyboard">
-            <input type="text" class="alpha" value="Q" readonly="true"/>
-            <input class="alpha" type="text" value="W" readonly="true"/>
-            <input class="alpha" type="text" value="E" readonly="true"/>
-            <input class="alpha" type="text" value="R" readonly="true"/>
-            <input class="alpha" type="text" value="T" readonly="true"/>
-            <input class="alpha" type="text" value="Y" readonly="true"/>
-            <input class="alpha" type="text" value="U" readonly="true"/>
-            <input class="alpha" type="text" value="I" readonly="true"/>
-            <input class="alpha" type="text" value="O" readonly="true"/>
-            <input class="alpha" type="text" value="P" readonly="true" /></br>
-            <input class="alpha" type="text" value="A" readonly="true"/>
-            <input class="alpha" type="text" value="S" readonly="true"/>
-            <input class="alpha" type="text" value="D" readonly="true"/>
-            <input class="alpha" type="text" value="F" readonly="true"/>
-            <input class="alpha" type="text" value="G" readonly="true"/>
-            <input class="alpha" type="text" value="H" readonly="true"/>
-            <input class="alpha" type="text" value="J" readonly="true"/>
-            <input class="alpha" type="text" value="K" readonly="true"/>
-            <input class="alpha" type="text" value="L" readonly="true"/></br>
-            <input class="alpha" type="text" value="Z" readonly="true"/>
-            <input class="alpha" type="text" value="X" readonly="true"/>
-            <input class="alpha" type="text" value="C" readonly="true"/>
-            <input class="alpha" type="text" value="V" readonly="true"/>
-            <input class="alpha" type="text" value="B" readonly="true"/>
-            <input class="alpha" type="text" value="N" readonly="true"/>
-            <input class="alpha" type="text" value="M" readonly="true"/>
+            <input class="alpha" type="text"  value="Q" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="W" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="E" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="R" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="T" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="Y" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="U" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="I" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="O" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="P" onclick="atClick(this.value)" readonly="true" /></br>
+            <input class="alpha" type="text" value="A" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="S" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="D" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="F" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="G" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="H" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="J" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="K" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="L" onclick="atClick(this.value)" readonly="true"/></br>
+            <input class="alpha" type="text" value="Z" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="X" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="C" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="V" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="B" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="N" onclick="atClick(this.value)" readonly="true"/>
+            <input class="alpha" type="text" value="M" onclick="atClick(this.value)" readonly="true"/>
         </div>
         <button class="glow-on-hover" type="button">Predict the Sentence</button>
         <!--<input class="btnFinish" type="button" value="Predict the Sentence!"> -->
@@ -72,13 +73,13 @@
         <div class="rightTree">
             <div class="score">
                 <div class="player1"> <h2>Player 1</h2>
-                    <p>Score : </p>
-                    <p>Turns left: </p>
+                    <p id="p1Score">Score : </p>
+                    <p id="p1Turns">Turns left: </p>
     
                 </div>
                 <div class="player2"> <h2>Player 2</h2>
-                    <p>Score : </p>
-                    <p>Turns left: </p>
+                    <p id="p2Score">Score : </p>
+                    <p id="p2Turns">Turns left: </p>
                 </div>
             </div>
             

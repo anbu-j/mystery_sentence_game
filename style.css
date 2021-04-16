@@ -1,5 +1,4 @@
 
-
 body{
     margin:20px;
     margin-top:60px;
@@ -122,7 +121,7 @@ p {
 
 .playButton {
     height: 30px;
-    width: 200px;
+    width: 280px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -160,12 +159,12 @@ p {
    /* margin-right: 2px;
     /*color: transparent;*/
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     background-color:rgb(60, 93, 192);
     border-style: dotted;
     border-width: 1px;
     font-style: italic;
-
+    
 }
 
 .player2 {
@@ -177,7 +176,7 @@ p {
    /* margin-right: 2px;
     /*color: transparent;*/
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     background-color:rgb(60, 93, 192);
     border-style: dotted;
     border-width: 1px;
