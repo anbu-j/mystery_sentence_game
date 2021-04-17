@@ -9,10 +9,10 @@ body{
     display: flex;
     background-color: steelblue;
  }
- *,*::before,*::after{
+  *,*::before,*::after{
     box-sizing: border-box;
  }
-
+/*styling for the player console */
  .leftTree {
     height: 60vh;
     width: 22vw;
@@ -27,6 +27,7 @@ body{
    /*justify-content: space-evenly;*/
    align-items: flex-start;
  }
+ /*styling for the game console */
  .Container {
     height: 60vh;
      width: 40vw;
@@ -41,10 +42,10 @@ body{
     align-items: center;
     justify-content: space-around;
  }
- 
+ /* styling for the scoreboard */
  .scoreBoard {
     height: 60vh;
-    width: 20vw;
+    width: 27vw;
    border-style: solid;
    border-color: black;
    border-width: 1px;
@@ -52,6 +53,7 @@ body{
    padding-left: 15px;
    background-color:royalblue;
  }
+ /*styling for the display board where each letter gets displayed */
 #display-board {
 
     height: 7vh;
@@ -69,11 +71,13 @@ body{
 p {
     color: black;
 }
+/*styling for the keyboard */
  .Keyboard {
      padding-left: 20px;
      padding-top: 40px;
      /*text-indent: -25px;*/
  }
+ /*styling of each keys in the keyboard */
  .alpha {
      font-size: var(--font-size-medium);
      height: 40px;
@@ -86,6 +90,7 @@ p {
      background-color: teal;
 
  }
+ /* styling for the containers in left tree*/
 .playStation {
     height: 35vh;
     width: 18vw;
@@ -96,6 +101,7 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
 }
+/* styling for the two text boxes in player console */
  .players {
     font-size: var(--font-size-medium);
     height: 30px;
@@ -108,7 +114,7 @@ p {
     background-color: slateblue;
 
 }
-
+/* styling for the game text box in player console */
 .gameMessage {
     height: 50px;
     width: 200px;
@@ -118,17 +124,17 @@ p {
     border-radius: 5px;
     text-align: left;
 }
-
+/* styling for all three buttons */
 .playButton {
     height: 30px;
     width: 280px;
     display: flex;
     justify-content: space-evenly;
 }
-
+/* styling for entire container on right */
 .rightTree  {
     height: 45vh;
-    width: 19vw;
+    width: 25vw;
    border-style: solid;
    border-color: pink;
    border-width: 1px;
@@ -137,10 +143,10 @@ p {
    justify-content: space-around;
   
 }
-
+/* styling for the container of players */
 .score {
     height: 30vh;
-    width: 18vw;
+    width: 24vw;
    border-style: solid;
    border-color: pink;
    border-width: 1px;
@@ -149,7 +155,7 @@ p {
    display: flex;
    justify-content: space-evenly;
  }
- 
+ /* styling for the player1 container */
 .player1 {
     font-size: var(--font-size-medium);
     font-weight:500;
@@ -166,7 +172,7 @@ p {
     font-style: italic;
     
 }
-
+/* styling for player2 container */
 .player2 {
     font-size: var(--font-size-medium);
     font-weight: 500;
@@ -184,17 +190,21 @@ p {
 
 }
 
-.Container .btnFinish {
+/*.Container .btnFinish {
     justify-content: left;
-}
-
+} */
+/* animation effects on h3 */
 h3 {
     text-align: center;
+    animation-duration: 3s;
+  animation-name: slidein;
 }
+/* animation effects on headtags */
 h1{
     animation-duration: 3s;
   animation-name: slidein;
 }
+/* to give glow effects on hover on buttons */
 @keyframes slidein {
     from {
       margin-left: 100%;
@@ -265,3 +275,13 @@ h1{
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+@media(max-width:600px){
+    body{
+        background-color:darkblue    }
+}
+@media only screen and (min-width: 500px) {
+    div.Container {
+      font-size: 13px;
+    }
+  }
+ 

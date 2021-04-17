@@ -5,37 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystery Sentence Game</title>
+    <iframe width="0" height="0 src="https://www.youtube.com/watch?v=fLrRfss9hFU" frameborder="0" allowfullscreen></iframe>
     <link rel="stylesheet" href="style.css">
   
 </head>
 <body>
+    <!---- for player console in the left side-->
     <div class="leftTree">
         <H1>PLAYER CONSOLE</H1>
         <div class="playStation">
-
-            <input id="p1" class="players" type="text" value="Player 1" readonly="true"/>
-             <input id="p2" class="players" type="text" value="Player 2" readonly="true"/>
+<!---Three text boxes for displaying two players and message during game-->
+            <input id="p1" class="players" type="text" value="Joann" readonly="true"/>
+             <input id="p2" class="players" type="text" value="Nathan" readonly="true"/>
              <input id="p3" class="gameMessage" type="text" value="Game is yet to start." readonly="true"/>
          </div>
+         <!----Three buttons for playing games -->
          <div class="playButton">
             <button id="sg" class="glow-on-hover" type="button" onclick="startGame()">Start Game</button>
-            <button id="rg" class="glow-on-hover" type="button" onclick="reGame()">Restart</button>
-            <button id ="pg" class="glow-on-hover" type="button" onclick="pauseGame()">Quit</button>
+            <!--<button id="rg" class="glow-on-hover" type="button" onclick="reGame()">Restart</button>-->
+            <button id ="pg" class="glow-on-hover" type="button" onclick="quitGame()">Restart</button>
            <!----<input class="btnStart" type="button" value="Start Game"> 
             <input class="btnStart" type="button" value="Restart Game"> -->
          </div>
          
 
     </div>
+    <!--The main game board-->
     <div class="Container"> <H1>GAME CONSOLE </H1>
         <div id="display-board" class="display-board">
             <!--<p>Hello World!</p>
             <textarea cols="50" rows="1">
 
             </textarea>-->
-       
-            
         </div>
+        <!---The input keyboard for players-->
         <div class="Keyboard">
             <input class="alpha" type="text"  value="Q" onclick="atClick(this.value)" readonly="true"/>
             <input class="alpha" type="text" value="W" onclick="atClick(this.value)" readonly="true"/>
@@ -67,28 +70,30 @@
         <button class="glow-on-hover" type="button">Predict the Sentence</button>
         <!--<input class="btnFinish" type="button" value="Predict the Sentence!"> -->
     </div>
+    <!--Another class for displaying score--->
     <div class="scoreBoard"> 
         <H1>SCOREBOARD</H1>
 
         <div class="rightTree">
             <div class="score">
-                <div class="player1"> <h2>Player 1</h2>
+                <div class="player1"> <h2>Joann</h2>
                     <p id="p1Score">Score : </p>
-                    <p id="p1Turns">Turns left: </p>
+                    <p id="p1TurnsLeft">Turns left: </p>
     
                 </div>
-                <div class="player2"> <h2>Player 2</h2>
+                <div class="player2"> <h2>Nathan</h2>
                     <p id="p2Score">Score : </p>
-                    <p id="p2Turns">Turns left: </p>
+                    <p id="p2TurnsLeft">Turns left: </p>
                 </div>
             </div>
             
-            
+            <!---To give rounds left for each players -->
             <div class="leaderBoard"> <h3>Rounds</h3>
-                <p>player1 :</p>
-                <p>player2 : </p>
+                <p id ="p1RdScore">Player1 :</p>
+                <p id ="p2RdScore">Player2 : </p>
             </div>  
         </div>  
+    
         </div>
           
     
