@@ -41,7 +41,7 @@ body{
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    padding-top: 15px;
+    padding-top: 10px;
     padding-left: 15px;
     background-color:royalblue;
     display: flex;
@@ -52,7 +52,7 @@ body{
  /* styling for the scoreboard */
  .scoreBoard {
     height: 90vh;
-    width: 30vw;
+    width: 35vw;
    border-style: solid;
    border-color: black;
    border-width: 1px;
@@ -166,8 +166,8 @@ p {
 .player1 {
     font-size: var(--font-size-medium);
     font-weight:500;
-    height: 200px;
-    width: 100px;
+    height: 300px;
+    width: 140px;
     /*padding: 20px 1px 0 1px;*/
    /* margin-right: 2px;
     /*color: transparent;*/
@@ -183,8 +183,8 @@ p {
 .player2 {
     font-size: var(--font-size-medium);
     font-weight: 500;
-    height: 200px;
-    width: 100px;
+    height: 300px;
+    width: 140px;
     /*padding: 20px 1px 0 1px;*/
    /* margin-right: 2px;
     /*color: transparent;*/
@@ -201,7 +201,7 @@ p {
     justify-content: left;
 } */
 /* animation effects on h3 */
-h3 {
+h1 {
     text-align: center;
     animation-duration: 3s;
   animation-name: slidein;
@@ -213,7 +213,7 @@ h3 {
         -moz-background-clip: text;
         background-clip: text;
         color: transparent;
-    animation-duration: 3s;
+    animation-duration: 6s;
     animation-name: slidein;
 }
 /* to give glow effects on hover on buttons */
