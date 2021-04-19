@@ -207,9 +207,14 @@ h3 {
   animation-name: slidein;
 }
 /* animation effects on headtags */
-h1{
+.multicolortext{
+        background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
     animation-duration: 3s;
-  animation-name: slidein;
+    animation-name: slidein;
 }
 /* to give glow effects on hover on buttons */
 @keyframes slidein {
