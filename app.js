@@ -40,6 +40,8 @@ var p2Turns = 0;
 //Initialize to first round
 var rdVal = 1;
 
+// Initialize variable for "Predict the Sentence" button (homeRun Function)
+var base = 0 
 // input array for user
 var easy = [
     "WHOLE WORLD IS A THEATER",
@@ -49,9 +51,10 @@ var easy = [
     "ASPIRE TO INSPIRE BEFORE EXPIRE",
     "MAKE EACH DAY BEST DAY OF LIFE"
 ];
-
+//const randomElement = Math.floor(Math.random() * easy.length);
+//console.log(random, easy[random]);
 //calling the 3rd element from the input array to be displayed on the display board
-const disp_text = easy[1];
+const disp_text = easy[5];
 console.log(disp_text)
 
 /*
@@ -121,7 +124,7 @@ function clearPoints() {
     p1Turns = 0;
     p2Turns = 0;
     
-
+    base = 0;
 }
 
 function disp_board(disp_text) {
@@ -343,17 +346,23 @@ function disp_string(disp_text) {
         if (document.getElementById("p1").style.backgroundColor === "red"){
             document.getElementById("p2").style.cssText = 'background-color: red'
             document.getElementById("p1").style.cssText = 'background-color: slateblue'
-            play1 = 0;
-            play2 = 1;
+            if (base == 0){
+                play1 = 0;
+                play2 = 1;
+            }
+
         }
         else if (document.getElementById("p2").style.backgroundColor === "red"){
             document.getElementById("p1").style.cssText = 'background-color: red'
             document.getElementById("p2").style.cssText = 'background-color: slateblue'
-            play2 = 0;
-            play1 = 1;
+            if (base == 0) {
+                play2 = 0;
+                play1 = 1;
+            }
         }
 
     }
+
     
     
   }
@@ -451,6 +460,16 @@ function winCalc() {
             scoreBoard("failure")
             resultMessage("failure")
         }
+        if (i == compBox.length - 1 && temp != compBox.length && base == 1) {
+            if (p1Turns == 0 || p2Turns == 0) {
+                console.log(i + "Temp != compBox Length : " + temp)
+                pointsCalc("failure")
+                scoreBoard("failure")
+                resultMessage("failure")
+            }
+
+        }
+
         
     }
 }
@@ -485,6 +504,7 @@ function reGame() {
     document.getElementById("p1TurnsLeft").innerHTML = "Turns left: " + p1Turns
     document.getElementById("p2TurnsLeft").innerHTML = "Turns left: " + p2Turns
     
+    base = 0;
 }
 
 function quitGame() {
@@ -503,5 +523,31 @@ function quitGame() {
 
 }
  
+function homeRun() {
+    base = 1;
+    console.log("Total turns: " + turnsCnt + " Player 1 turns: " + p1Turns + " Player 2 turns: " + p2Turns)
+    var wordsLeft = 0;
+    var playCnt = 0;
+    var compBox = document.getElementById("display-board").querySelectorAll(".bx1")
+    for (i = 0; i<compBox.length; i++) {
+        if(compBox[i].style.backgroundColor === 'goldenrod') {
+            playCnt++
+        }
+    }
+    wordsLeft = compBox.length - playCnt;
+    
 
+    if (play1 == 1) {
+        p1Turns = wordsLeft;
+        console.log("New turns for Player 1 is : " + p1Turns)
+        alert("Player 1 has " + p1Turns + " turns to predict and win") 
+    }
+    else if (play2 == 1) {
+        p2Turns = wordsLeft;
+        console.log("New turns for Player 2 is : " + p2Turns)
+        alert("Player 2 has " + " turns to predict and win") 
+    }
+
+}
+ 
 /* --------------------------------- End of Game flow -----------------------------------*/
