@@ -1,3 +1,12 @@
+
+/* --------------------------- Initialize section --------------------------------
+
+1. Enable Start and Restart buttons
+2. Initiaalize all game variables.
+3. Set the array of sentences
+
+*/
+
 document.getElementById("sg").disabled = false
 document.getElementById("pg").disabled = false
 
@@ -46,7 +55,7 @@ const disp_text = easy[1];
 console.log(disp_text)
 
 /*
- --------------------------------Start of Common functions
+ --------------------------------Start of Common functions -------------------------------------
 */
 
 /* Common Functions 
@@ -62,7 +71,7 @@ console.log(disp_text)
 9. End Game to clear variables after 5 rounds
 */
 
-
+/* to remove all stored inputs in display board */
 function clearDisplayBoard() {
     var bord = document.getElementById("display-board").childNodes
     var j = 0
@@ -203,15 +212,7 @@ function pointsCalc(status) {
     
 }
 
-
-function scoreBoard() {
-    console.log("Round : " + rdVal + " : inside scoreBoard")
-    document.getElementById("p1Score").innerHTML = "Score : " + pl1Points
-    document.getElementById("p2Score").innerHTML = "Score : " + pl2Points
-    document.getElementById("p1TurnsLeft").innerHTML = "Turns left: " + p1Turns;
-    document.getElementById("p2TurnsLeft").innerHTML = "Turns left: " + p2Turns;
-    document.getElementById("p1RdScore").innerHTML = "Player1 : " + pl1Rd1Points + " + " + pl1Rd2Points + " + " + pl1Rd3Points + " + " + pl1Rd4Points + " + " + pl1Rd5Points + " = " + pl1MatchPoints;
-    document.getElementById("p2RdScore").innerHTML = "Player2 : " + pl2Rd1Points + " + " + pl2Rd2Points + " + " + pl2Rd3Points + " + " + pl2Rd4Points + " + " + pl2Rd5Points + " = " + pl2MatchPoints;
+function resultMessage(status) {
     if (rdVal == 5 && pl1MatchPoints > pl2MatchPoints) {
         alert("Congratulations Player 1 wins the game!!")
         endGame()
@@ -225,19 +226,40 @@ function scoreBoard() {
         endGame()
     }
     else {
-        if (play1 == 1) {
-            alert("Player 1 wins Round" + rdVal);
-            rdVal++;
-            reGame()
+        if (rdVal >= 1 && rdVal < 5 && status === "success") {
+            if (play1 == 1) {
+                alert("Player 1 wins Round" + rdVal);
+                rdVal++;
+                reGame()
+            }
+            if (play2 == 1) {
+                alert("Player 2 wins Round" + rdVal);
+                rdVal++;
+                reGame()
+            }
         }
-        if (play2 == 1) {
-            alert("Player 2 wins Round" + rdVal);
+        else if (rdVal >= 1 && rdVal < 5 && status === "failure") {
+            alert("Nobody won, Round: " + rdVal + ". Better Luck next time!!")
             rdVal++;
-            reGame()
+            reGame();
+
         }
     }
-    
 }
+
+function scoreBoard() {
+
+    
+    console.log("Round : " + rdVal + " : inside scoreBoard")
+    document.getElementById("p1Score").innerHTML = "Score : " + pl1Points
+    document.getElementById("p2Score").innerHTML = "Score : " + pl2Points
+    document.getElementById("p1TurnsLeft").innerHTML = "Turns left: " + p1Turns;
+    document.getElementById("p2TurnsLeft").innerHTML = "Turns left: " + p2Turns;
+    document.getElementById("p1RdScore").innerHTML = "Player1 : " + pl1Rd1Points + " + " + pl1Rd2Points + " + " + pl1Rd3Points + " + " + pl1Rd4Points + " + " + pl1Rd5Points + " = " + pl1MatchPoints;
+    document.getElementById("p2RdScore").innerHTML = "Player2 : " + pl2Rd1Points + " + " + pl2Rd2Points + " + " + pl2Rd3Points + " + " + pl2Rd4Points + " + " + pl2Rd5Points + " = " + pl2MatchPoints;
+  
+}
+
 
 
 function endGame() {
@@ -259,6 +281,21 @@ function endGame() {
 
 /*
  ----------------------------------- End of Common Functions -----------------------------
+*/
+
+/* --------------------------------- Start of Game flow -----------------------------------
+
+1. Start Game button function
+2. Select the Sentence 
+3. Actios at click of Keyboard input.
+4. Check clicked keyboard input with hidden letters on display board
+    4.1 Make them visible
+    4.2 Assign points to players.
+5. Check if there is a winner.
+    5.1 Update scoreboard
+    5.2 Post message on round/game winners
+6. move to next round(restart game)
+7. Restart game in the middle of play (quit game)
 */
 
 function startGame() {
@@ -322,14 +359,14 @@ function disp_string(disp_text) {
   }
 
 
-// function to check the user clicks and checking it with input array on the comp box and with keyoard
+// function to check the user clicks and checking it with input array on the comp box and with keyboard
 function disp_comp(disp_text) {
     //var len = disp_text.length
     var keys = document.getElementsByClassName("alpha")
     var compBox = document.getElementById("display-board").querySelectorAll(".bx1")
     var breaker = 0
     for (var j = 0; j<keys.length; j++) {
-       var keyCnt = 0
+       var keyCnt = 0 // count number of times an alphabet is repeated in the sentence 
        for (var i = 0; i<compBox.length; i++){
 // To change the color of button pressed by the user in the keyboard
             if (compBox[i].innerText == keys[j].value && compBox[i].innerText == disp_text) {
@@ -347,6 +384,7 @@ function disp_comp(disp_text) {
             else if (keyCnt == 0 && i == compBox.length - 1 && keys[j].value == disp_text) {
                 keys[j].style.cssText = 'background-color: grey'
                 breaker++
+                console.log(breaker + " : breaker")
                 //break;
             }
         }
@@ -404,12 +442,14 @@ function winCalc() {
         if (i == compBox.length - 1 && temp == compBox.length) {
             console.log(i + "Temp = compBox Length : " + temp)
             pointsCalc("success")
-            scoreBoard()
+            scoreBoard("success")
+            resultMessage("success")
         }
         if (i == compBox.length - 1 && temp != compBox.length && p1Turns == 0 && p2Turns == 0) {
             console.log(i + "Temp != compBox Length : " + temp)
             pointsCalc("failure")
-            scoreBoard()
+            scoreBoard("failure")
+            resultMessage("failure")
         }
         
     }
@@ -464,3 +504,4 @@ function quitGame() {
 }
  
 
+/* --------------------------------- End of Game flow -----------------------------------*/

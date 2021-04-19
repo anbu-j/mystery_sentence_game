@@ -19,6 +19,9 @@ body{
   *,*::before,*::after{
     box-sizing: border-box;
  }
+
+ /*  ------------------------ Player Console styling --------------------------------*/
+
 /*styling for the player console */
  .leftTree {
     height: 90vh;
@@ -34,69 +37,8 @@ body{
    /*justify-content: space-evenly;*/
    align-items: flex-start;
  }
- /*styling for the game console */
- .Container {
-    height: 90vh;
-     width: 40vw;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    padding-top: 10px;
-    padding-left: 15px;
-    background-color:royalblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
- }
- /* styling for the scoreboard */
- .scoreBoard {
-    height: 90vh;
-    width: 35vw;
-   border-style: solid;
-   border-color: black;
-   border-width: 1px;
-   padding-top: 15px;
-   padding-left: 15px;
-   background-color:royalblue;
- }
- /*styling for the display board where each letter gets displayed */
-#display-board {
 
-    height: 7vh;
-    width: 35vw;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    color: black;
-    display: flex;
-    padding-top: 15px;
-    padding-inline-start: 2%;
-    
 
-}
-p {
-    color: black;
-}
-/*styling for the keyboard */
- .Keyboard {
-     padding-left: 20px;
-     padding-top: 40px;
-     /*text-indent: -25px;*/
- }
- /*styling of each keys in the keyboard */
- .alpha {
-     font-size: var(--font-size-medium);
-     height: 40px;
-     width: 40px;
-     /*padding: 20px 1px 0 1px;*/
-    /* margin-right: 2px;
-     /*color: transparent;*/
-     border-radius: 5px;
-     text-align: center;
-     background-color: teal;
-
- }
  /* styling for the containers in left tree*/
 .playStation {
     height: 35vh;
@@ -124,7 +66,7 @@ p {
 /* styling for the game text box in player console */
 .gameMessage {
     height: 50px;
-    width: 200px;
+    width: 180px;
     /*padding: 20px 1px 0 1px;*/
    /* margin-right: 2px;
     /*color: transparent;*/
@@ -134,14 +76,96 @@ p {
 /* styling for all three buttons */
 .playButton {
     height: 30px;
-    width: 280px;
+    width: 180px;
     display: flex;
     justify-content: space-evenly;
 }
+
+
+/*  ------------------------ End of Player Console styling --------------------------------*/
+
+
+/*  ------------------------ Game Console styling --------------------------------*/
+
+
+ /*styling for the game console */
+ .Container {
+    height: 90vh;
+     width: 40vw;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding-top: 15px;
+    padding-left: 15px;
+    background-color:royalblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+ }
+
+ /*styling for the display board where each letter gets displayed */
+#display-board {
+
+    height: 7vh;
+    width: 35vw;
+    padding-top: 40px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    color: black;
+    display: flex;
+    padding-top: 15px;
+    padding-inline-start: 2%;
+    
+
+}
+
+
+/*styling for the keyboard */
+ .Keyboard {
+     padding-left: 20px;
+     padding-top: 80px;
+     padding-bottom: 80px;
+     /*text-indent: -25px;*/
+ }
+ /*styling of each keys in the keyboard */
+ .alpha {
+     font-size: var(--font-size-medium);
+     height: 40px;
+     width: 40px;
+     /*padding: 20px 1px 0 1px;*/
+    /* margin-right: 2px;
+     /*color: transparent;*/
+     border-radius: 5px;
+     text-align: center;
+     background-color: teal;
+
+ }
+
+ /*  ------------------------ End of Game Console styling --------------------------------*/
+
+
+ /*  ------------------------ Scoreboard styling --------------------------------*/
+ 
+  /* styling for the scoreboard */
+  .scoreBoard {
+    height: 90vh;
+    width: 35vw;
+   border-style: solid;
+   border-color: black;
+   border-width: 1px;
+   padding-top: 15px;
+   padding-left: 15px;
+   background-color:royalblue;
+ }
+
 /* styling for entire container on right */
 .rightTree  {
     height: 65vh;
     width: 25vw;
+    padding-left: 5px;
+    padding-top: 5px;
    border-style: solid;
    border-color: pink;
    border-width: 1px;
@@ -152,13 +176,13 @@ p {
 }
 /* styling for the container of players */
 .score {
-    height: 30vh;
+    height: 40vh;
     width: 24vw;
    border-style: solid;
    border-color: pink;
    border-width: 1px;
-   padding-top: 15px;
-   background-color:rebeccapurple;
+   padding-top: 5px;
+   /*background-color:rebeccapurple;*/
    display: flex;
    justify-content: space-evenly;
  }
@@ -166,6 +190,7 @@ p {
     height: 40vh;
     width: 24vw;
     display:flexbox;
+    
 }
  /* styling for the player1 container */
 .player1 {
@@ -182,6 +207,10 @@ p {
     border-style: dotted;
     border-width: 1px;
     font-style: italic;
+    background-color: turquoise;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
     
 }
 /* styling for player2 container */
@@ -199,9 +228,18 @@ p {
     border-style: dotted;
     border-width: 1px;
     font-style: italic;
-    justify-items: right;
+    letter-spacing: 1px;
+    background-color: turquoise;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
 
 }
+
+/*  ------------------------ End of Scoreboard styling --------------------------------*/
+
+
+/*  ------------------------ Additional features styling --------------------------------*/
 
 /*.Container .btnFinish {
     justify-content: left;
@@ -303,3 +341,9 @@ h1 {
     }
   }
   
+
+p {
+    color: black;
+}
+
+/*  ------------------------ End of Additional features styling --------------------------------*/
