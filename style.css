@@ -7,8 +7,15 @@ body{
     border-color: lawngreen;
     border-width: 1px;
     display: flex;
-    background-color: steelblue;
+    background-color:maroon;
  }
+ body:hover{
+    background-color:#fffb00;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+ }
+    
   *,*::before,*::after{
     box-sizing: border-box;
  }
@@ -45,7 +52,7 @@ body{
  /* styling for the scoreboard */
  .scoreBoard {
     height: 60vh;
-    width: 27vw;
+    width: 30vw;
    border-style: solid;
    border-color: black;
    border-width: 1px;
@@ -284,4 +291,4 @@ h1{
       font-size: 13px;
     }
   }
- 
+  
