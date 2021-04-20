@@ -62,7 +62,7 @@ To play the game;
 ### Installation
 Clone the Git repository to your local system <br>
 
-    ```bash
+```bash
     git clone https://github.com/anbu-j/mystery_sentence_game.git 
-    ```
+```
 
