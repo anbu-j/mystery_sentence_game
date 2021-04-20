@@ -1,13 +1,4 @@
 # Mystery Sentence Game
-
-<!-- PROJECT SHIELDS -->
-<!-- [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url] -->
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -121,3 +112,10 @@ LinkedIn - [linkedin-url]: https://linkedin.com/in/anbu-joselin
 ## Acknowledgement
 [w3 schools](W3Schools Online Web Tutorialshttps://www.w3schools.com) <br>
 [stack overflow](Stack Overflow - Where Developers Learn, Share, & Build ...https://stackoverflow.com)
+<!-- PROJECT SHIELDS -->
+<!-- [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] -->

@@ -324,7 +324,6 @@ function disp_string() {
 
 // this function decides the turn of each player by clicks and assign colors on screen for their turn
   function atClick(e) {
-    "use strict";
     disp_comp(e);
     if (document.getElementById("sg").disabled) {
         if (document.getElementById("p1").style.backgroundColor === "red"){
