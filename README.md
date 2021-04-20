@@ -78,7 +78,9 @@ Game starts when the user clicks on the button "**Start Game**". The game ends a
 
 ## Features
 1. Turns of each player is highlighted with a red background.
-2. The selecttion made by the user on the on-screen keyboard turns the color of the key to "**Golden**" upon matching a letter in the mystery sentence and "**Grey**" upon not matching a letter in the mystery sentence.
+2. The selection made by the user on the on-screen keyboard turns the color of the key to
+    * "**Golden**" upon matching a letter in the mystery sentence 
+    * "**Grey**" upon not matching a letter in the mystery sentence.
 3. Each time a key is selected, the players "**Turns left**"  and points "**Score**" are updated in the "**Score Board**".
 4. Users are alerted of the game progress as alerts during the game.
 5. Users can restart the game at any time during the play, using the button "**Restart**"
