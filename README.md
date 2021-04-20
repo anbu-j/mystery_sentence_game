@@ -43,3 +43,25 @@ Key features of the game include:
 * Interesting
 * Encourages to learn spelling
 * Develops mental prowess
+
+## Built With
+ 
+The game is developed using the following:
+* HTML
+* Javascript
+* CSS
+
+## Getting Started
+
+To play the game;
+
+### Prerequisites
+1. Visual Studio 
+2. Chrome (Version 89.0.4389.128 or later)
+
+### Installation
+    Clone the Git repository to your local system
+        ```sh
+        git clone https://github.com/anbu-j/mystery_sentence_game.git 
+        ```
+
