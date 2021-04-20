@@ -1,12 +1,12 @@
 # Mystery Sentence Game
 
 <!-- PROJECT SHIELDS -->
-[![Contributors][contributors-shield]][contributors-url]
+<!-- [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -108,3 +108,12 @@ Display in game messages in the "**Game Message**" section of the PLayers Consol
 17. resultMessage - Function displays the alert message notifying players about the status of play, upon calling.
 18. scoreBoard - Functions prints the scoreboard in the game screen during play, upon calling.
 19. endGame - Function clears the player in round scoreboard, after each round, upon calling.
+
+## Bugs
+1. Points are displayed after the alert message.
+2. Repeated click on an already selected letter leads to losing a chance.
+## Contact
+
+## Acknowledgement
+[w3 schools](W3Schools Online Web Tutorialshttps://www.w3schools.com)
+[stack overflow](Stack Overflow - Where Developers Learn, Share, & Build ...https://stackoverflow.com)
