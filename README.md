@@ -26,9 +26,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#feature">Features</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -66,3 +64,13 @@ Clone the Git repository to your local system <br>
     git clone https://github.com/anbu-j/mystery_sentence_game.git 
 ```
 
+## Usage
+Game starts when the user clicks on the button "**Start Game**". The game ends automatically after 5 rounds. If the user wants to replay, the "**Restart**" button can be utilised. 
+
+> The game screen is split into 3 sections 
+>> * "**PLAYER CONSOLE**" shows the player turns, status of play (*future feature*), Start and Restart buttons.
+>> * "**GAME CONSOLE**" shows the "**Mystery Sentence**" to be predicted, a keyboard to predict a letter of the mystery sentence and a shortcut button "**Predict the Sentence**" to winning a round of "**Mystery Sentence**"
+>> * "**SCORE BOARD**" shows the "**Score**" and "**Turns left**" for each player during a round of "**Mystery Sentence**". After each round, the winner of the round gets all the points. Maximum points scored in all five rounds determines the winner of the game.
+
+
+## Features
