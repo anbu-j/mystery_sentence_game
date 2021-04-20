@@ -93,7 +93,7 @@ Game starts when the user clicks on the button "**Start Game**". The game ends a
 1. **atClick** - Function called each time a key on the On screen keyboard is selected.
 2. **startGame** - Function called each time the Start button is selected. Disabled when the game is in progress.
 3. **disp_string** - Function that calls disp_board() and disp_space() functions to create the hidden sentence on the game console.
-4. **disp_comp **- Function that compares the Key selected on the On screen keyboard with the hidden letter on the game console and changes both to "**Golden**" uppon successful match and "**Grey**" upon unsuccessful match. Also calls the pointsCalc() and winCalc() functions to calculate the points and determine if the round is complete.
+4. **disp_comp**- Function that compares the Key selected on the On screen keyboard with the hidden letter on the game console and changes both to "**Golden**" uppon successful match and "**Grey**" upon unsuccessful match. Also calls the pointsCalc() and winCalc() functions to calculate the points and determine if the round is complete.
 5. **winCalc** - Function calculates if the mystery sentence has been successfully found within the number of turns. If all 5 rounds have completed successfully, the function declares a winner of the game. The function calls reGame() function to start the next round and endGame() to go back to the Start of the game.
 6. **reGame** - Resets the game console and Scoreboard. Resets all the in game variables used by the program.
 7. **quitGame** - Resets the game console, Player console and the score board. Start button is activated at this point.
