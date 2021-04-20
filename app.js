@@ -73,8 +73,7 @@ var disp_text = easy[0];
 10. End Game to clear variables after 5 rounds
 */
 
-
-
+// Function to generate random inputs from an array */
 function getString() {
     let gameSentence = easy[Math.floor(Math.random() * easy.length)];
     return(gameSentence)
@@ -92,14 +91,14 @@ function clearDisplayBoard() {
     } while (j<bord.length)
 
 }
-
+/* function to clear all key colors user clicked */
 function clearKeyColor() {
     var elem = document.querySelectorAll(".alpha")
     for (k = 0; k < elem.length; k++) {
         elem[k].style.cssText = 'background-color: teal'
     }
 }
-
+/* function to clear each players each round scores and player turns  */
 function clearPoints() {
     play1 = 0
     play2 = 0
@@ -132,7 +131,7 @@ function clearPoints() {
     
     base = 0;
 }
-
+// function calling the input text to the display board by creating new text nodes in javascript
 function disp_board(disp_text) {
     var a = disp_text;
     // creating new letter boxes in the display board
@@ -148,10 +147,11 @@ function disp_board(disp_text) {
 };
 
 
-//to find out the space between the words displayed 
+/* to find out the space between the words displayed */ 
 
 function disp_space(disp_text) {
     var a = disp_text;
+    // creating a new div with boxvalue 'A' and giving ittransparent color to set space between words in display board
     var newBox = document.createElement("div")
     var boxVal = document.createTextNode("A")
     newBox.style.cssText = 'height:20px; width:20px; border-radius:5px;text-align:center;color: transparent'
@@ -159,9 +159,10 @@ function disp_space(disp_text) {
     document.getElementById("display-board").appendChild(newBox)
 };
 
-
+/* function to find out how many turns for players */
 function turnsCalc(gameSentence) {
     var turnCnt = 1
+    // new array initialized to find the unique letters in the sentence from input array
     var arr = []
     for (i=0; i<gameSentence.length; i++) {
         var temp = 0
@@ -184,7 +185,7 @@ function turnsCalc(gameSentence) {
     turnCnt = turnCnt - 1
     return(turnCnt)
 }
-
+/* function for calculating each rounds score to determine the winner in the final fifth round */
 function pointsCalc(status) {
     var rdPoints = 0;
     rdPoints = pl1Points + pl2Points;
@@ -205,7 +206,7 @@ function pointsCalc(status) {
     }
     
 }
-
+/* function for setting alert messages as results for each rounds */
 function resultMessage(status) {
     if (rdVal == 5 && pl1MatchPoints > pl2MatchPoints) {
         alert("Congratulations Player 1 wins the game!!")
@@ -240,7 +241,7 @@ function resultMessage(status) {
         }
     }
 }
-
+/* Score Board functions */
 function scoreBoard() {
     document.getElementById("p1Score").innerHTML = "Score : " + pl1Points
     document.getElementById("p2Score").innerHTML = "Score : " + pl2Points
@@ -252,7 +253,7 @@ function scoreBoard() {
 }
 
 
-
+/* End game function calls */
 function endGame() {
     clearDisplayBoard()
     clearKeyColor()
@@ -288,7 +289,7 @@ function endGame() {
 6. move to next round(restart game)
 7. Restart game in the middle of play (quit game)
 */
-
+/* when user clicks start button */
 function startGame() {
     rdVal = 1;
     document.getElementById("sg").disabled = true;
@@ -407,7 +408,7 @@ function disp_comp(disp_text) {
     }
 
 }
-
+/* function decides the winner by compairing the value of temp, display text box color, turns of each players and base value */
 function winCalc() {
     var temp = 0;
     var compBox = document.getElementById("display-board").querySelectorAll(".bx1")
@@ -437,11 +438,7 @@ function winCalc() {
         
     }
 }
-    
-
-
-
-
+    /* funcion to restart game */
 function reGame() {
     //rdVal = 1;
     document.getElementById("sg").disabled = true;
@@ -467,7 +464,7 @@ function reGame() {
     
     base = 0;
 }
-
+// function for quitting the game,start button will be enabled
 function quitGame() {
     document.getElementById("sg").disabled = false;
     document.getElementById("pg").disabled = true;
@@ -483,7 +480,7 @@ function quitGame() {
     document.getElementById("p2RdScore").innerHTML = "Player2 : " ;
 
 }
- 
+ // Function for predicting the sentence
 function homeRun() {
     base = 1;
     console.log("Total turns: " + turnsCnt + " Player 1 turns: " + p1Turns + " Player 2 turns: " + p2Turns)
