@@ -306,7 +306,7 @@ function startGame() {
 
 }
 
-//called when start button is activated
+//called when start button is activated to create the mystery sentence
 
 function disp_string() {
     var gameSentence = getString();
@@ -355,7 +355,7 @@ function disp_string() {
 function disp_comp(disp_text) {
     var keys = document.getElementsByClassName("alpha")
     var compBox = document.getElementById("display-board").querySelectorAll(".bx1")
-    var breaker = 0
+    var breaker = 0 // to break after the keyboard element is not found in display board
     for (var j = 0; j<keys.length; j++) {
        var keyCnt = 0 // count number of times an alphabet is repeated in the sentence 
        for (var i = 0; i<compBox.length; i++){
@@ -400,7 +400,7 @@ function disp_comp(disp_text) {
             turnsCnt = turnsCalc(disp_text);
             document.getElementById("p1TurnsLeft").innerHTML = "Turns left: " + p1Turns
             document.getElementById("p2TurnsLeft").innerHTML = "Turns left: " + p2Turns
-            winCalc()
+            winCalc() // check if there is a winner
           break;
       }  
       
@@ -437,7 +437,7 @@ function winCalc() {
         
     }
 }
-    /* funcion to restart game */
+    /* funcion to restart game after each round */
 function reGame() {
     //rdVal = 1;
     document.getElementById("sg").disabled = true;
@@ -463,7 +463,7 @@ function reGame() {
     
     base = 0;
 }
-// function for quitting the game,start button will be enabled
+// function for quitting the game in between the rounds
 function quitGame() {
     document.getElementById("sg").disabled = false;
     document.getElementById("pg").disabled = true;
@@ -479,7 +479,7 @@ function quitGame() {
     document.getElementById("p2RdScore").innerHTML = "Player2 : " ;
 
 }
- // Function for predicting the sentence
+ // Function for predicting the sentence as a shortcut to win
 function homeRun() {
     base = 1;
     console.log("Total turns: " + turnsCnt + " Player 1 turns: " + p1Turns + " Player 2 turns: " + p2Turns)

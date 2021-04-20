@@ -34,7 +34,7 @@ This project aims at building an online game that both kids and adults can enjoy
 Key features of the game include:
 * Interesting
 * Encourages to learn spelling
-* Develops mental prowess
+* Develops mental process
 
 ## Built With
  
