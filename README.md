@@ -90,32 +90,32 @@ Game starts when the user clicks on the button "**Start Game**". The game ends a
 2. Add Screenshots of the game to README file
 
 ## Technical Details
-1. atClick() - Function called each time a key on the On screen keyboard is selected.
-2. startGame() - Function called each time the Start button is selected. Disabled when the game is in progress.
-3. disp_string() - Function that calls disp_board() and disp_space() functions to create the hidden sentence on the game console.
-4. disp_comp - Function that compares the Key selected on the On screen keyboard with the hidden letter on the game console and changes both to "**Golden**" uppon successful match and "**Grey**" upon unsuccessful match. Also calls the pointsCalc() and winCalc() functions to calculate the points and determine if the round is complete.
-5. winCalc - Function calculates if the mystery sentence has been successfully found within the number of turns. If all 5 rounds have completed successfully, the function declares a winner of the game. The function calls reGame() function to start the next round and endGame() to go back to the Start of the game.
-6. reGame - Resets the game console and Scoreboard. Resets all the in game variables used by the program.
-7. quitGame - Resets the game console, Player console and the score board. Start button is activated at this point.
-8. homeRun - Function gives the in-turn player an opportunity to take out the second player from the game and predict the sentence. Turns are recalculated to ensure the player has minimum opportunities to win. If successful, the player gets all the points for the round. If unsuccessful, no player gets a point for the round.
-9. getString - Function scans through the array of available sentenes and randomly selects a sentence for the round.
-10. clearDisplayBoard - Function clears the mystery sentence, upon calling.
-11. clearKeyColor - Function clears the key selected on the keyboard (after completion of a round/game/restart)
-12. clearPoints - Function clears the points for both players in each round, upon calling.
-13. disp_board - Function creates a box of letter in the mystery sentence, upon calling.
-14. disp_space - Function creates a blank space between two words, upon calling.
-15. turnsCalc - Scans through the mystery sentence, finds the count of unique letters, and marks it as the number of turns a player has to predict the mystery sentence.
-16. pointsCalc - Function calculates the points after each user selection on the on screen keyboard, upon calling.
-17. resultMessage - Function displays the alert message notifying players about the status of play, upon calling.
-18. scoreBoard - Functions prints the scoreboard in the game screen during play, upon calling.
-19. endGame - Function clears the player in round scoreboard, after each round, upon calling.
+1. **atClick** - Function called each time a key on the On screen keyboard is selected.
+2. **startGame** - Function called each time the Start button is selected. Disabled when the game is in progress.
+3. **disp_string** - Function that calls disp_board() and disp_space() functions to create the hidden sentence on the game console.
+4. **disp_comp **- Function that compares the Key selected on the On screen keyboard with the hidden letter on the game console and changes both to "**Golden**" uppon successful match and "**Grey**" upon unsuccessful match. Also calls the pointsCalc() and winCalc() functions to calculate the points and determine if the round is complete.
+5. **winCalc** - Function calculates if the mystery sentence has been successfully found within the number of turns. If all 5 rounds have completed successfully, the function declares a winner of the game. The function calls reGame() function to start the next round and endGame() to go back to the Start of the game.
+6. **reGame** - Resets the game console and Scoreboard. Resets all the in game variables used by the program.
+7. **quitGame** - Resets the game console, Player console and the score board. Start button is activated at this point.
+8. **homeRun** - Function gives the in-turn player an opportunity to take out the second player from the game and predict the sentence. Turns are recalculated to ensure the player has minimum opportunities to win. If successful, the player gets all the points for the round. If unsuccessful, no player gets a point for the round.
+9. **getString** - Function scans through the array of available sentenes and randomly selects a sentence for the round.
+10. **clearDisplayBoard** - Function clears the mystery sentence, upon calling.
+11. **clearKeyColor** - Function clears the key selected on the keyboard (after completion of a round/game/restart)
+12. **clearPoints** - Function clears the points for both players in each round, upon calling.
+13. **disp_board** - Function creates a box of letter in the mystery sentence, upon calling.
+14. **disp_space** - Function creates a blank space between two words, upon calling.
+15. **turnsCalc** - Scans through the mystery sentence, finds the count of unique letters, and marks it as the number of turns a player has to predict the mystery sentence.
+16. **pointsCalc** - Function calculates the points after each user selection on the on screen keyboard, upon calling.
+17. **resultMessage**- Function displays the alert message notifying players about the status of play, upon calling.
+18. **scoreBoard** - Functions prints the scoreboard in the game screen during play, upon calling.
+19. **endGame**- Function clears the player in round scoreboard, after each round, upon calling.
 
 ## Bugs
 1. Points are displayed after the alert message.
 2. Repeated click on an already selected letter leads to losing a chance.
 ## Contact
-Email - anbuelza_cherian@yahoo.com
+Email - anbuelza_cherian@yahoo.com <br>
 LinkedIn - [linkedin-url]: https://linkedin.com/in/anbu-joselin
 ## Acknowledgement
-[w3 schools](W3Schools Online Web Tutorialshttps://www.w3schools.com)
+[w3 schools](W3Schools Online Web Tutorialshttps://www.w3schools.com) <br>
 [stack overflow](Stack Overflow - Where Developers Learn, Share, & Build ...https://stackoverflow.com)
