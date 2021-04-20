@@ -279,7 +279,7 @@ function endGame() {
 
 1. Start Game button function
 2. Select the Sentence 
-3. Actios at click of Keyboard input.
+3. Actions at click of Keyboard input.
 4. Check clicked keyboard input with hidden letters on display board
     4.1 Make them visible
     4.2 Assign points to players.
