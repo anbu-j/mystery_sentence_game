@@ -114,7 +114,8 @@ Game starts when the user clicks on the button "**Start Game**". The game ends a
 1. Points are displayed after the alert message.
 2. Repeated click on an already selected letter leads to losing a chance.
 ## Contact
-
+Email - anbuelza_cherian@yahoo.com
+LinkedIn - [linkedin-url]: https://linkedin.com/in/anbu-joselin
 ## Acknowledgement
 [w3 schools](W3Schools Online Web Tutorialshttps://www.w3schools.com)
 [stack overflow](Stack Overflow - Where Developers Learn, Share, & Build ...https://stackoverflow.com)
