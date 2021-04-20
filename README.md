@@ -86,7 +86,8 @@ Game starts when the user clicks on the button "**Start Game**". The game ends a
 7. Automaticaly determine the number of turns based on the mystery sentence.
 
 ## Roadmap
-Display in game messages in the "**Game Message**" section of the PLayers Console.
+1. Display in game messages in the "**Game Message**" section of the Players Console.
+2. Add Screenshots of the game to README file
 
 ## Technical Details
 1. atClick() - Function called each time a key on the On screen keyboard is selected.
