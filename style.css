@@ -7,10 +7,10 @@ body{
     border-color: lawngreen;
     border-width: 1px;
     display: flex;
-    background-color:maroon;
+    background-color:lightslategray;
  }
  body:hover{
-    background-color:#fffb00;
+    background-color:violet;
     -webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
@@ -43,7 +43,7 @@ body{
 .playStation {
     height: 35vh;
     width: 18vw;
-    border-style: dashed;
+    /*border-style: dashed;*/
    border-color:mediumaquamarine;
    border-width: 1px;
     display: flex;
@@ -72,6 +72,7 @@ body{
     /*color: transparent;*/
     border-radius: 5px;
     text-align: left;
+    background-color: khaki;
 }
 /* styling for all three buttons */
 .playButton {
@@ -152,8 +153,8 @@ body{
   .scoreBoard {
     height: 90vh;
     width: 35vw;
-   border-style: solid;
-   border-color: black;
+   /*border-style: solid;
+   border-color: black;*/
    border-width: 1px;
    padding-top: 15px;
    padding-left: 15px;
@@ -166,8 +167,8 @@ body{
     width: 25vw;
     padding-left: 5px;
     padding-top: 5px;
-   border-style: solid;
-   border-color: pink;
+   /*border-style: solid;
+   border-color: pink;*/
    border-width: 1px;
    display: flex;
    flex-direction: column;
@@ -176,10 +177,10 @@ body{
 }
 /* styling for the container of players */
 .score {
-    height: 40vh;
+    height: 32vh;
     width: 24vw;
-   border-style: solid;
-   border-color: pink;
+   /*border-style: solid;
+   border-color: pink;*/
    border-width: 1px;
    padding-top: 5px;
    /*background-color:rebeccapurple;*/
@@ -196,7 +197,7 @@ body{
 .player1 {
     font-size: var(--font-size-medium);
     font-weight:800;
-    height: 300px;
+    height: 220px;
     width: 140px;
     /*padding: 20px 1px 0 1px;*/
    /* margin-right: 2px;
@@ -217,7 +218,7 @@ body{
 .player2 {
     font-size: var(--font-size-medium);
     font-weight:800;
-    height: 300px;
+    height: 220px;
     width: 140px;
     /*padding: 20px 1px 0 1px;*/
    /* margin-right: 2px;

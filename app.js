@@ -3,7 +3,7 @@
 
 1. Enable Start and Restart buttons
 2. Initiaalize all game variables.
-3. Set the array of sentences
+3. Set the array of sentences and a default sentence
 
 */
 
@@ -43,7 +43,7 @@ var rdVal = 1;
 // Initialize variable for "Predict the Sentence" button (homeRun Function)
 var base = 0 
 // input array for user
-var easy = [
+let easy = [
     "WHOLE WORLD IS A THEATER",
     "SUN RISES IN THE EAST",
     "MARY HAD A LITTLE LAMB",
@@ -51,11 +51,9 @@ var easy = [
     "ASPIRE TO INSPIRE BEFORE EXPIRE",
     "MAKE EACH DAY BEST DAY OF LIFE"
 ];
-//const randomElement = Math.floor(Math.random() * easy.length);
-//console.log(random, easy[random]);
+
 //calling the 3rd element from the input array to be displayed on the display board
-const disp_text = easy[5];
-console.log(disp_text)
+var disp_text = easy[0];
 
 /*
  --------------------------------Start of Common functions -------------------------------------
@@ -63,18 +61,27 @@ console.log(disp_text)
 
 /* Common Functions 
 
-1. CLear Display Board
-2. Clear the Key Selections
-3. Clear the points at the end of Game
-4. Create Sentence in the display board
-5. Create space in the sentences
-6. Calculate Turns left in the game
-7. Calculcate points won in each play
-8. Calculate Score after each round
-9. End Game to clear variables after 5 rounds
+1. select a random sentence for game 
+2. CLear Display Board
+3. Clear the Key Selections
+4. Clear the points at the end of Game
+5. Create Sentence in the display board
+6. Create space in the sentences
+7. Calculate Turns left in the game
+8. Calculcate points won in each play
+9. Calculate Score after each round
+10. End Game to clear variables after 5 rounds
 */
 
+
+
+function getString() {
+    let gameSentence = easy[Math.floor(Math.random() * easy.length)];
+    return(gameSentence)
+}
+
 /* to remove all stored inputs in display board */
+
 function clearDisplayBoard() {
     var bord = document.getElementById("display-board").childNodes
     var j = 0
@@ -82,7 +89,6 @@ function clearDisplayBoard() {
         for (i=0; i<bord.length; i++) {
             bord[i].parentNode.removeChild(bord[i])
         }
-        console.log(bord.length)
     } while (j<bord.length)
 
 }
@@ -128,9 +134,7 @@ function clearPoints() {
 }
 
 function disp_board(disp_text) {
-    //console.log("Hello")
     var a = disp_text;
-    //console.log(a)
     // creating new letter boxes in the display board
     var newBox = document.createElement("div")
     newBox.setAttribute("class","bx1")
@@ -141,60 +145,47 @@ function disp_board(disp_text) {
     newBox.appendChild(boxVal);
     // passing the value of new text node to the boxes we created
     document.getElementById("display-board").appendChild(newBox)
-
-    //console.log(insBox)
 };
 
 
 //to find out the space between the words displayed 
 
 function disp_space(disp_text) {
-    //console.log("Hello")
     var a = disp_text;
-    //console.log(a)
     var newBox = document.createElement("div")
     var boxVal = document.createTextNode("A")
     newBox.style.cssText = 'height:20px; width:20px; border-radius:5px;text-align:center;color: transparent'
     newBox.appendChild(boxVal)
     document.getElementById("display-board").appendChild(newBox)
-
-    //console.log(insBox)
 };
 
 
-function turnsCalc(disp_text) {
-    //WHOLE WORLD IS A THEATER
-    //ASPIRE TO INSPIRE BEFORE EXPIRE
+function turnsCalc(gameSentence) {
     var turnCnt = 1
     var arr = []
-    for (i=0; i<disp_text.length; i++) {
+    for (i=0; i<gameSentence.length; i++) {
         var temp = 0
         for (j=0;j<turnCnt;j++) {
             if(arr.length == 0) {
-                arr[j] = disp_text[i] 
+                arr[j] = gameSentence[i] 
                 turnCnt++;
-                //console.log(arr)
                 break;
             }
-            else if (disp_text[i] == arr[j] || disp_text[i] == ' '){
+            else if (gameSentence[i] == arr[j] || gameSentence[i] == ' '){
                 temp++
             }
-            else if(disp_text[i] != arr[j] && j == turnCnt - 1 && temp == 0) {
-                arr[j] = disp_text[i];
+            else if(gameSentence[i] != arr[j] && j == turnCnt - 1 && temp == 0) {
+                arr[j] = gameSentence[i];
                 turnCnt++;
-                //console.log(arr)
                 break;
             }
         }
     }
     turnCnt = turnCnt - 1
-    //console.log("No of turns : " + turnCnt)
-    //console.log(arr)
     return(turnCnt)
 }
 
 function pointsCalc(status) {
-    console.log("Round : " + rdVal + " : inside poitsCalc")
     var rdPoints = 0;
     rdPoints = pl1Points + pl2Points;
     if (status === "success"){
@@ -251,9 +242,6 @@ function resultMessage(status) {
 }
 
 function scoreBoard() {
-
-    
-    console.log("Round : " + rdVal + " : inside scoreBoard")
     document.getElementById("p1Score").innerHTML = "Score : " + pl1Points
     document.getElementById("p2Score").innerHTML = "Score : " + pl2Points
     document.getElementById("p1TurnsLeft").innerHTML = "Turns left: " + p1Turns;
@@ -302,7 +290,6 @@ function endGame() {
 */
 
 function startGame() {
-    //console.log
     rdVal = 1;
     document.getElementById("sg").disabled = true;
     document.getElementById("pg").disabled = false;
@@ -310,11 +297,9 @@ function startGame() {
     p1Turns = turnsCnt;
     p2Turns = turnsCnt;
     alert("Player 1 goes first. Player 2 goes next" )
-    disp_string(disp_text);
+    disp_string();
     document.getElementById("p1").style.cssText = 'background-color: red'
     play1 = 1
-    //console.log("Player 1 : " + play1 + " and Player 2 : " + play2)
-    //console.log("Player 1 points: " + pl1Points + " and Player 2 points : " + pl2Points)
     document.getElementById("p1TurnsLeft").innerHTML = "Turns left: " + p1Turns
     document.getElementById("p2TurnsLeft").innerHTML = "Turns left: " + p2Turns
 
@@ -322,17 +307,16 @@ function startGame() {
 
 //called when start button is activated
 
-function disp_string(disp_text) {
-    var len = disp_text.length
-    //console.log(len);
+function disp_string() {
+    var gameSentence = getString();
+    var len = gameSentence.length
     var cntr = 0;
     for (var i = 0; i<len; i++) {
-        if(disp_text[i] === " ") {
-            //console.log(disp_text[i] + "In") 
-            disp_space(disp_text[i]);
+        if(gameSentence[i] === " ") {
+            disp_space(gameSentence[i]);
         }
         else 
-        disp_board(disp_text[i]) 
+        disp_board(gameSentence[i]) 
     }
 }
 
@@ -340,7 +324,6 @@ function disp_string(disp_text) {
 // this function decides the turn of each player by clicks and assign colors on screen for their turn
   function atClick(e) {
     "use strict";
-    console.log(e);
     disp_comp(e);
     if (document.getElementById("sg").disabled) {
         if (document.getElementById("p1").style.backgroundColor === "red"){
@@ -370,7 +353,6 @@ function disp_string(disp_text) {
 
 // function to check the user clicks and checking it with input array on the comp box and with keyboard
 function disp_comp(disp_text) {
-    //var len = disp_text.length
     var keys = document.getElementsByClassName("alpha")
     var compBox = document.getElementById("display-board").querySelectorAll(".bx1")
     var breaker = 0
@@ -393,7 +375,6 @@ function disp_comp(disp_text) {
             else if (keyCnt == 0 && i == compBox.length - 1 && keys[j].value == disp_text) {
                 keys[j].style.cssText = 'background-color: grey'
                 breaker++
-                console.log(breaker + " : breaker")
                 //break;
             }
         }
@@ -401,22 +382,15 @@ function disp_comp(disp_text) {
         /*breaker is the condition where no match is present in the array compBox.
         keyCnt is the condition number of perfect matches found in the array compBox and the keyboard. */
 
-        //console.log(keyCnt + " : Inside outer loop" + " : " + keys[j].value)
 
       if(breaker > 0 || keyCnt > 0) {
-       // console.log("Player 1 : " + play1 + " and Player 2 : " + play2)
-       // console.log("Player 1 points: " + pl1Points + " and Player 2 points : " + pl2Points)
             if (play1 == 1) {
                 pl1Points = pl1Points + keyCnt;
-                //console.log("Player 1 : " + play1 + " and Player 2 : " + play2)
-                //console.log("Player 1 points: " + pl1Points + " and Player 2 points : " + pl2Points)
                 p1Turns = p1Turns - 1;
 
             }
             if (play2 == 1) {
-                pl2Points = pl2Points + keyCnt
-                //console.log("Player 1 : " + play1 + " and Player 2 : " + play2)
-                //console.log("Player 1 points: " + pl1Points + " and Player 2 points : " + pl2Points)
+                pl2Points = pl2Points + keyCnt;
                 p2Turns = p2Turns - 1;
             }
 
@@ -427,7 +401,6 @@ function disp_comp(disp_text) {
             document.getElementById("p1TurnsLeft").innerHTML = "Turns left: " + p1Turns
             document.getElementById("p2TurnsLeft").innerHTML = "Turns left: " + p2Turns
             winCalc()
-        //  console.log("No match")
           break;
       }  
       
@@ -437,32 +410,23 @@ function disp_comp(disp_text) {
 
 function winCalc() {
     var temp = 0;
-    console.log("Round : " + rdVal + " : inside winCalc")
     var compBox = document.getElementById("display-board").querySelectorAll(".bx1")
-    console.log(compBox.length + "Length of CompBox")
-    //console.log(compBox.length)
     for ( i = 0; i < compBox.length ; i++) {
         if (compBox[i].style.backgroundColor === 'goldenrod') {
-            console.log(compBox[i].innerHTML)
-
             temp++
-            console.log("Temp : " + temp)
         }
         if (i == compBox.length - 1 && temp == compBox.length) {
-            console.log(i + "Temp = compBox Length : " + temp)
             pointsCalc("success")
             scoreBoard("success")
             resultMessage("success")
         }
         if (i == compBox.length - 1 && temp != compBox.length && p1Turns == 0 && p2Turns == 0) {
-            console.log(i + "Temp != compBox Length : " + temp)
             pointsCalc("failure")
             scoreBoard("failure")
             resultMessage("failure")
         }
         if (i == compBox.length - 1 && temp != compBox.length && base == 1) {
             if (p1Turns == 0 || p2Turns == 0) {
-                console.log(i + "Temp != compBox Length : " + temp)
                 pointsCalc("failure")
                 scoreBoard("failure")
                 resultMessage("failure")
@@ -484,8 +448,6 @@ function reGame() {
     document.getElementById("pg").disabled = false;
 
     //bord.remove();
-    console.log(document.getElementById("sg").disabled)
-    console.log(document.getElementById("pg").disabled)
    
     turnsCnt = turnsCalc(disp_text);
     p1Turns = turnsCnt;
@@ -496,8 +458,7 @@ function reGame() {
 
     clearDisplayBoard();
 
-    disp_string(disp_text);
-    //console.log(bord)
+    disp_string();
     clearKeyColor();
     document.getElementById("p1Score").innerHTML = "Score : " + pl1Points
     document.getElementById("p2Score").innerHTML = "Score : " + pl2Points
@@ -545,7 +506,7 @@ function homeRun() {
     else if (play2 == 1) {
         p2Turns = wordsLeft;
         console.log("New turns for Player 2 is : " + p2Turns)
-        alert("Player 2 has " + " turns to predict and win") 
+        alert("Player 2 has " + p2Turns + " turns to predict and win") 
     }
 
 }
