@@ -7,7 +7,7 @@ body{
     border-color: lawngreen;
     border-width: 1px;
     display: flex;
-    background-color:lightslategray;
+    background-color:yellowgreen;
  }
  body:hover{
     background-color:violet;
