@@ -60,8 +60,8 @@ To play the game;
 2. Chrome (Version 89.0.4389.128 or later)
 
 ### Installation
-    Clone the Git repository to your local system
-        ```bash
-        git clone https://github.com/anbu-j/mystery_sentence_game.git 
-        ```
+Clone the Git repository to your local system
+    ```bash
+    git clone https://github.com/anbu-j/mystery_sentence_game.git 
+    ```
 
